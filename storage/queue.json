@@ -1,0 +1,46 @@
+[
+    {
+        "execute_at": 1766703599,
+        "payload": {
+            "nim": "2222",
+            "nama": "SINDI",
+            "prodi": "Teknik Informatika",
+            "angkatan": "2025",
+            "mode": "guid",
+            "created_at": "2025-12-25 03:48:06"
+        }
+    },
+    {
+        "execute_at": 1766703599,
+        "payload": {
+            "nim": "666",
+            "nama": "Hari",
+            "prodi": "Animasi",
+            "angkatan": "2025",
+            "mode": "guid",
+            "created_at": "2025-12-25 03:53:23"
+        }
+    },
+    {
+        "execute_at": 1766703599,
+        "payload": {
+            "nim": "55",
+            "nama": "Abdul",
+            "prodi": "Teknik Informatika",
+            "angkatan": "2025",
+            "mode": "guid",
+            "created_at": "2025-12-25 18:31:20"
+        }
+    },
+    {
+        "execute_at": 1767579672,
+        "payload": {
+            "nim": "Yaya",
+            "nama": "12",
+            "prodi": "Animasi",
+            "angkatan": "2025",
+            "mode": "eventual",
+            "created_at": "2026-01-05 03:19:12"
+        }
+    }
+]

@@ -1,0 +1,12 @@
+# Environment
+.env
+
+# Dependencies
+/vendor/
+
+# Storage logs
+/storage/*.log
+
+# OS files
+.DS_Store
+Thumbs.db
