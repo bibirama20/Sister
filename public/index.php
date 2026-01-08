@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Tampilkan view data
 if ($page === 'view') {
     $mahasiswa = MahasiswaController::getAll();
-    require __DIR__ . '/../app/public/view.php';
+    require __DIR__ . '/../public/view.php';
     exit;
 }
 ?>
