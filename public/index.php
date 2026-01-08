@@ -104,7 +104,7 @@ if ($page === 'view') {
 
     <?php if ($message): ?>
         <div class="success"><?= $message ?></div>
-        <a href="index.php?page=view" class="btn-link">📊 Lihat Data Mahasiswa</a>
+        <a href="?page=view" class="btn-link">📊 Lihat Data Mahasiswa</a>
     <?php endif; ?>
 
     <form method="POST">
@@ -130,8 +130,7 @@ if ($page === 'view') {
         <button type="submit">💾 Simpan Data</button>
     </form>
 
-  <a href="index.php?page=view" class="btn-link">📊 Lihat Data Mahasiswa</a>
-</div>
+  <a href="?page=view" class="btn-link">📊 Lihat Data Mahasiswa</a>
 
 </body>
 </html>
