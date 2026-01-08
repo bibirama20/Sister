@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Tampilkan view data
 if ($page === 'view') {
     $mahasiswa = MahasiswaController::getAll();
-    require __DIR__ . '/../app/Views/view.php';
+    require __DIR__ . '/../app/public/view.php';
     exit;
 }
 ?>
@@ -130,7 +130,7 @@ if ($page === 'view') {
         <button type="submit">💾 Simpan Data</button>
     </form>
 
-<a href="index.php?page=view" class="btn-link">📄 Lihat Data Mahasiswa</a>
+   <a href="view.php" class="btn-link">📊 Lihat Data Mahasiswa</a>
 </div>
 
 </body>
