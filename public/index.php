@@ -1,12 +1,13 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 
-use Dotenv\Dotenv;
 use App\Controllers\MahasiswaController;
 
-// Load ENV
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
+$envPath = __DIR__ . '/../.env';
+if (file_exists($envPath)) {
+    $dotenv = Dotenv\Dotenv::createImmutable(dirname($envPath));
+    $dotenv->load();
+}
 
 $message = '';
 
@@ -26,7 +27,6 @@ if ($page === 'view') {
     exit;
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="id">
