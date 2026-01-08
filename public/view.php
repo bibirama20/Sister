@@ -1,14 +1,18 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 
-use Dotenv\Dotenv;
 use App\Controllers\MahasiswaController;
 
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
+if (file_exists(__DIR__ . '/../.env')) {
+    try {
+        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+        $dotenv->safeLoad();
+    } catch (Throwable $e) {
+    }
+}
 
 // ================================
-// AMBIL DATA DARI SUPABASE (AMAN)
+// AMBIL DATA DARI SUPABASE
 // ================================
 try {
     $data = MahasiswaController::getAll();
@@ -105,12 +109,20 @@ try {
         <?php foreach ($data as $i => $row): ?>
             <tr>
                 <td><?= $i + 1 ?></td>
-                <td><?= htmlspecialchars($row['nim']) ?></td>
-                <td><?= htmlspecialchars($row['nama']) ?></td>
-                <td><?= htmlspecialchars($row['prodi']) ?></td>
-                <td><?= htmlspecialchars($row['angkatan']) ?></td>
-                <td><span class="badge <?= $row['mode'] ?>"><?= strtoupper($row['mode']) ?></span></td>
-                <td><?= date('d-m-Y H:i', strtotime($row['created_at'])) ?></td>
+                <td><?= htmlspecialchars($row['nim'] ?? '-') ?></td>
+                <td><?= htmlspecialchars($row['nama'] ?? '-') ?></td>
+                <td><?= htmlspecialchars($row['prodi'] ?? '-') ?></td>
+                <td><?= htmlspecialchars($row['angkatan'] ?? '-') ?></td>
+                <td>
+                    <span class="badge <?= htmlspecialchars($row['mode'] ?? '') ?>">
+                        <?= strtoupper($row['mode'] ?? '-') ?>
+                    </span>
+                </td>
+                <td>
+                    <?= isset($row['created_at'])
+                        ? date('d-m-Y H:i', strtotime($row['created_at']))
+                        : '-' ?>
+                </td>
             </tr>
         <?php endforeach ?>
         </tbody>
